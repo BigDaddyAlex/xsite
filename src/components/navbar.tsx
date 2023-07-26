@@ -12,31 +12,8 @@ export const Navbar = (props: any) => {
     navigate("auth")
   }
 
-//   async function isSignedin() {
-//     try {
-//         await Auth.currentAuthenticatedUser();
-//         return true;
-//     } catch {
-//         return false;
-//     }
-// }
 
-
-  function getRightButton() {
-    if (props.signOut) {
-      return <Button variation="primary"
-        loadingText=""
-        size="small"
-        ariaLabel="" onClick={props.signOut }>Sign out</Button>
-    } else {
-      return <Button variation="primary"
-        loadingText=""
-        size="small"
-        ariaLabel="" onClick={ModalHandler} >
-        Log in
-      </Button>
-    }
-  }
+  
 
   return (
     <div>
@@ -44,16 +21,7 @@ export const Navbar = (props: any) => {
         <NavLink className="navbar-brand" to="/">
           <img className="img-fluid " style={{ height: 35 }} src="/logo-transparent-bg.png" />
         </NavLink>
-        <NavLink className="navbar-nav h5 text-white text-decoration-none" to="">
-          Home
-        </NavLink>
-        <NavLink className="navbar-nav h5 text-white text-decoration-none " to="/creator">
-          About
-        </NavLink>
-        <NavLink className="navbar-nav h5 text-white text-decoration-none" to="/Contact">
-          Contact
-        </NavLink>
-        {getRightButton()}
+        
       </nav>
     </div>
   );
