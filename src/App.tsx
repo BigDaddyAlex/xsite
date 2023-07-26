@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import '@aws-amplify/ui-react/styles.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import ContactPage from "./components/ContactPage";
+import Unauth from './components/unauth';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App bg-black" style={{ height: 999 }}>
+      <Routes>
+        <Route path="" element={<Unauth />} >
+          <Route path="" element={<Home />} />
+          <Route path="Contact" element={<ContactPage />} />
+        </Route>
+      </Routes>
+
     </div>
   );
-}
+};
 
 export default App;
